@@ -1,28 +1,10 @@
-== README
+Here are some bonus goals, if you’re up for it:
+	When I try to create a review from the reviews index page (/reviews) and leave the product blank, I get an error. Fix that error.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+	Make the product review form load via AJAX. (This one might be too hard for you, but trying and failing will be a learning experience.)
 
-Things you may want to cover:
+	http://guides.rubyonrails.org/action_view_overview.html
 
-* Ruby version
+	Use distance_of_time_in_words in Review timestamp.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+	Then refactor to use time_ago_in_words, which defaults to difference from Time.now().
