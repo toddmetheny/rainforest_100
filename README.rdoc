@@ -10,3 +10,4 @@ Here are some bonus goals, if you’re up for it:
 	Then refactor to use time_ago_in_words, which defaults to difference from Time.now().
 
   Jessica Hunt
+  Rodo Novarini
