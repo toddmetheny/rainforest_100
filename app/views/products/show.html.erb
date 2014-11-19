@@ -21,12 +21,12 @@
 		<p>
 			<%= review.comment %>
 			<br>
-			Added on: <%= review.created_at %>
+			Added: <%= time_ago_in_words review.created_at %> ago
 		</p>
 
 	<% end %>
 
-	<h3>New Review</h3>
+	<h3>Add Review</h3>
 	<%= render 'reviews/form' %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

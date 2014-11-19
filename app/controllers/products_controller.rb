@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   # GET /products/1.json
+  #new review, copying from reviews controller-tm
   def show
     @review = Review.new
   end
