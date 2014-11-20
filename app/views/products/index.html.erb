@@ -1,39 +1,35 @@
-<h1>Listing products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Welcome to cO(n)go</h1>
+  
+ 
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        
-          <td>
-            <figure class="text-center product-thumbnail">
-              <%= link_to 'path' do %>
-                <%= image_tag product.pic %>
-              <% end %>
-              <%= product.formatted_price %>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="all-products text-center">
+          <div>
+            <p><%= product.name %></p>
+            <p><%= product.description %></p>
+          </div>
+          <div class="just-photos">  
+            <figure class="product-thumbnail">
+              <p class="product-thumbnail">
+                <%= link_to 'path' do %>
+                  <%= image_tag product.pic %>
+                <% end %>
+                <%= product.formatted_price %>
+              </p>
             </figure>
-          </td>
-        <td><%= product.price_in_cents %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </div> 
+            
+            
+          <div>
+            <%= link_to 'Show', product %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+        
+        <% end %>
 
-<br>
+    <br>
 
-<%= link_to 'New Product', new_product_path %>
+      <%= link_to 'New Product', new_product_path %>
+      </div>

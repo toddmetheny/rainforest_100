@@ -3,14 +3,25 @@
   They will automatically be included in application.css.
 */
 
-.thumbnail{
+p{
+	padding: 25px;
+}
+
+.product-thumbnail{
 	max-width: 100px;
 	max-height: 100px;
+	display: inline;
+	float: left;
+	padding: 15px;
 }
 
 .profile-pic{
 	width: 400px;
 	height: 200px;
+}
+
+.just-photos{
+	padding: 20px;
 }
 
 
