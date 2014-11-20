@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    #@product.pictures.new
   end
 
   # GET /products/1/edit
@@ -27,10 +28,15 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    # Rails.logger picture_params
+    # Rails.logger.debug "*******************"
     @product = Product.new(product_params)
+    #create a product, then create a picture
+    #@product.pictures.create(picture_params[:picture])
 
     respond_to do |format|
       if @product.save
+        # @product.pictures.create(picture_params[:picture])
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -72,6 +78,10 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price_in_cents)
+      params.require(:product).permit(:name, :description, :price_in_cents, :pic)
     end
+
+    # def picture_params
+    #   params.require(:product).permit(:picture[:url], :picture[:title])
+    # end
 end

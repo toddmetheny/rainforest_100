@@ -3,7 +3,8 @@ class Product < ActiveRecord::Base
 	validates :price_in_cents, numericality: {only_integer: true, greater_than: 0}
 	
 	has_many :reviews
-	has_one :picture
+	# has_many :pictures
+	#accepts_nested_attributes_for :pictures
 
 	# attr_accessible :image
 
