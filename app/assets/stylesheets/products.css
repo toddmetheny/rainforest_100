@@ -2,3 +2,15 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.thumbnail{
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.profile-pic{
+	max-width: 400px;
+	max-height: 200px;
+}
+
+
