@@ -15,6 +15,17 @@
   <%= @product.formatted_price %>
 </p>
 
+<form action="" method="GET">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_0DUOXU6bGnHcE9pdeAVcWzEUBgrmj"
+    data-amount="<%= @product.price_in_cents%>"
+    data-name="cO(n)go"
+    data-description="<%= @product.name %> (<%= @product.formatted_price%>)"
+    data-image="/128x128.png">
+  </script>
+</form>
+
 <h3>Reviews</h3>
 	<% @product.reviews.each do |review| %>
 

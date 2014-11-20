@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :photos
 
   devise_for :users
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end
+
+  resources :charges
 
   root 'products#index'
 
