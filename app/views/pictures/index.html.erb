@@ -13,6 +13,7 @@
     <% @pictures.each do |picture| %>
       <tr>
         <td><%= picture.title %></td>
+        <td><%= image_tag picture.url %></td>
         <td><%= picture.url %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
