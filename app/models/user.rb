@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reviews
+
+  validates :username, :uniqueness => { :case_sensitive => false }
+
+  attr_accessor :login
+
+
 end

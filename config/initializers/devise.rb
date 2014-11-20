@@ -243,6 +243,15 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
+  #added by Todd
+  #from: https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
+  config.authentication_keys = [ :login ]
+
+  config.reset_password_keys = [ :username ]
+  config.confirmation_keys = [ :username ]
+
+
+
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.
