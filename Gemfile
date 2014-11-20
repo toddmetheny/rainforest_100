@@ -52,3 +52,5 @@ gem 'spring',        group: :development
 
 gem 'stripe'
 
+gem 'paperclip', '~>4.2.0'
+
