@@ -16,8 +16,15 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.formatted_price %></td>
-        <td><%= image_tag product.pic, class: "thumbnail" %></td>
+        
+          <td>
+            <figure class="text-center product-thumbnail">
+              <%= link_to 'path' do %>
+                <%= image_tag product.pic %>
+              <% end %>
+              <%= product.formatted_price %>
+            </figure>
+          </td>
         <td><%= product.price_in_cents %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>

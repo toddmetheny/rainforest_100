@@ -16,6 +16,8 @@
     <%= f.text_area :comment %>
   </div>
 
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <% if @product.nil? %>
     <div class="field">
       <%= f.label :product_id %><br>
