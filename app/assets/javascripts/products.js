@@ -15,14 +15,14 @@ $(document).ready(function(){
 			add_review.text('Add Review');
 		} else {
 			add_review.text('Hide Form');
-		}
+		} 
 	});
 
 	main_pic.on('mouseenter', function(){
 		$(this).attr('src', 'http://www.calbuzz.com/wp-content/uploads/yoda1.jpg');
 	});
 	main_pic.on('mouseleave', function(){
-		$this.attr('src', '<%= j @products.last %>')
+		$this.attr('src', '<%= j @products.pic %>')
 	});
 
 	$('#reviews-list > h4 > a').on('click', function(e){

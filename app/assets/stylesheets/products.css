@@ -75,3 +75,7 @@ body > div:nth-child(8) > a > h5{
 body > div:nth-child(9){
 	margin: 10px;
 }
+
+.signup{
+	margin: 15px;
+}
