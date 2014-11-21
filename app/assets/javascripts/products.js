@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var main_pic = $('div:nth-child(5) > dl > img');
 	var add_review = $('div:nth-child(8) > a > h5');
 	var click = 0;
+	var main_pic_image = main_pic.attr('src');
 	review_partial.hide();
 	
 	$('a.review-toggle').on('click', function(e){
@@ -22,7 +23,8 @@ $(document).ready(function(){
 		$(this).attr('src', 'http://www.calbuzz.com/wp-content/uploads/yoda1.jpg');
 	});
 	main_pic.on('mouseleave', function(){
-		$this.attr('src', '<%= j @products.pic %>')
+		console.log("<%= j @products.pic %>")
+		$(this).attr('src', main_pic_image)
 	});
 
 	$('#reviews-list > h4 > a').on('click', function(e){
