@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div>
+  <p>
+    <strong>Name:</strong>
+    <%= @product.name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+  <!-- place we might put put pictures -->
 
-<!-- place we might put put pictures -->
-<p>
-  <%= image_tag @product.pic, class: "profile-pic" %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+    <%= image_tag @product.pic, class: "profile-pic" %>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.formatted_price %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
 
+  <p>
+    <strong>Price:</strong>
+    <%= @product.formatted_price %>
+  </p>
+</div>
 <form action="" method="GET">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -30,16 +30,17 @@
   </script>
 </form>
 
-<h3>Reviews</h3>
+<div id="reviews-list">
+  <h3>Reviews</h3>
 	<% @product.reviews.each do |review| %>
-
-		<p>
+		  <p>
 			<%= review.comment %>
 			<br>
 			Added: <%= time_ago_in_words review.created_at %> ago
 		</p>
 
 	<% end %>
+</div>
 
 	<h3>Add Review</h3>
 	<%= render 'reviews/form' %>

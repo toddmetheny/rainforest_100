@@ -1,32 +1,17 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
-
-p{
-	padding: 25px;
-}
-
-.btn.btn-primary a{
+.btn-primary a{
 	color: #fff;
 }
 
-.product-thumbnail{
-    transform: rotate(90deg);
-	max-width: 150px;
-	max-height: 150px;
-	display: inline;
-	float: left;
+#logo{
 	padding: 15px;
 }
 
-.profile-pic{
-	width: 400px;
-	height: 200px;
+.product-image{
+	max-width: 250px;
+	max-height: 250px;
+	float: left;
+	padding: 10px;
 }
 
-.just-photos{
-	padding: 20px;
-}
 
 

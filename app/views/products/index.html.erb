@@ -1,26 +1,35 @@
 
-   <div class="btn btn-large btn-primary">
-      <%= link_to 'New Product', new_product_path %>
-    </div>
-<h1>Welcome to cO(n)go</h1>
-  
- 
-    <% @products.each do |product| %>
-      <div class="col-md-4 thumbnail">
-  
-            <p>Product:<%= product.name %></p>
-            <p>Description:<%= product.description %></p>
-                <%= link_to 'path' do %>
-                  <%= image_tag product.pic, class: 'product-thumbnail' %>
-                <% end %>
-                <%= product.formatted_price %>
+<div class="btn btn-large btn-primary">
+  <%= link_to 'New Product', new_product_path %>
+</div>
 
-            
-            
-          <%= link_to 'Show', product %>
-          <%= link_to 'Edit', edit_product_path(product) %>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div id="logo" class="text-center">
+  <%= image_tag 'congo.png' %>
+</div>
+
+
+<% @products.each do |product| %>
+<dl class="col-md-4 col-span-3">
+  <%= link_to 'path' do %>
+    <%= image_tag product.pic, class: 'product-image' %>
+  <% end %>
+  <dt>
+    <%= product.name %>
+  </dt>
+  <dd>
+    <p><%= product.description %></p>
+  </dd>
+
+  <dt>
+    <%= product.formatted_price %>
+  </dt>
   
-      </div>
-        
-    <% end %>
+
+  <dd>
+    <%= link_to 'Show', product %>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </dd>
+</dl>
+
+<% end %>
