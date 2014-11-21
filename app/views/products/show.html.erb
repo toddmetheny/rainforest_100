@@ -19,34 +19,39 @@
     </dt>
 
   </div>
-  <form action="" method="GET">
+  <form id='stripe-form' action="" method="GET">
     <script
       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="pk_0DUOXU6bGnHcE9pdeAVcWzEUBgrmj"
       data-amount="<%= @product.price_in_cents%>"
       data-name="cO(n)go"
       data-description="<%= @product.name %> (<%= @product.formatted_price%>)"
-      data-image="/128x128.png">
+      data-image='assets/yoda.png'>
     </script>
   </form>
 
   </dl>
 
   <div id="reviews-list">
-  <h3>Reviews</h3>
-  <% @product.reviews.each do |review| %>
-  	  <p>
-  		<%= review.comment %>
-  		<br>
-  		Added: <%= time_ago_in_words review.created_at %> ago
-  	</p>
+    <h4>Reviews (<a href="#"><%= @product.reviews.count %></a>)</h4>
+    <% @product.reviews.each do |review| %>
+    	<p>
+    		<%= review.comment %>
+    		<br>
+    		Added: <%= time_ago_in_words review.created_at %> ago
+        <br/>
+        Created by user: <%= review.user.username %>
+    	</p>
 
-  <% end %>
+    <% end %>
 </div>
 
-<div>
-	<h3>Add Review</h3>
-	<%= render 'reviews/form' %>
+<div class="">
+	<a href="#" class="review-toggle"><h5 class="review-toggle">Add Review</h5></a>
+
+  <div class="review-class">
+    <p id="review-form"><%= render 'reviews/form' %></p>
+  </div>
 </div>
 
 <div>

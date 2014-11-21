@@ -52,4 +52,26 @@ dl{
 	font-size: 22px;
 }
 
+.show-price{
+	font-size: 18px;
+}
 
+#stripe-form{
+	padding: 10px;
+}
+
+#review_comment, #new_review > div.actions, label{
+	margin: 10px;
+}
+
+#reviews-list > h4{
+	margin: 10px;
+}
+
+body > div:nth-child(8) > a > h5{
+	margin: 10px;
+}
+
+body > div:nth-child(9){
+	margin: 10px;
+}
