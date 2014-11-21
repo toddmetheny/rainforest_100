@@ -1,49 +1,55 @@
 <p id="notice"><%= notice %></p>
 <div>
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </p>
 
   <!-- place we might put put pictures -->
-
+  <dl>
     <%= image_tag @product.pic, class: "profile-pic" %>
+    <dt class="show-name">
+      <%= @product.name %>
+    </dt>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </p>
+     <dd class="show-description">
 
-  <p>
-    <strong>Price:</strong>
-    <%= @product.formatted_price %>
-  </p>
-</div>
-<form action="" method="GET">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_0DUOXU6bGnHcE9pdeAVcWzEUBgrmj"
-    data-amount="<%= @product.price_in_cents%>"
-    data-name="cO(n)go"
-    data-description="<%= @product.name %> (<%= @product.formatted_price%>)"
-    data-image="/128x128.png">
-  </script>
-</form>
+      <%= @product.description %>
 
-<div id="reviews-list">
+    </dd><br/>
+
+    <dt class="show-price">
+      Date this person! Just $<%= @product.formatted_price %>!
+    </dt>
+
+  </div>
+  <form action="" method="GET">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_0DUOXU6bGnHcE9pdeAVcWzEUBgrmj"
+      data-amount="<%= @product.price_in_cents%>"
+      data-name="cO(n)go"
+      data-description="<%= @product.name %> (<%= @product.formatted_price%>)"
+      data-image="/128x128.png">
+    </script>
+  </form>
+
+  </dl>
+
+  <div id="reviews-list">
   <h3>Reviews</h3>
-	<% @product.reviews.each do |review| %>
-		  <p>
-			<%= review.comment %>
-			<br>
-			Added: <%= time_ago_in_words review.created_at %> ago
-		</p>
+  <% @product.reviews.each do |review| %>
+  	  <p>
+  		<%= review.comment %>
+  		<br>
+  		Added: <%= time_ago_in_words review.created_at %> ago
+  	</p>
 
-	<% end %>
+  <% end %>
 </div>
 
+<div>
 	<h3>Add Review</h3>
 	<%= render 'reviews/form' %>
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+</div>

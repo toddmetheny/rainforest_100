@@ -36,4 +36,20 @@ dl{
 	font-weight: bold;
 }
 
+.profile-pic{
+	max-width: 300px;
+	float: left;
+	padding: 10px;
+}
+
+.show-description{
+	max-width: 700px;
+	font-size: 15px;
+}
+
+.show-name{
+	margin: 5px;
+	font-size: 22px;
+}
+
 
