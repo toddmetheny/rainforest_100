@@ -7,9 +7,14 @@ p{
 	padding: 25px;
 }
 
+.btn.btn-primary a{
+	color: #fff;
+}
+
 .product-thumbnail{
-	max-width: 100px;
-	max-height: 100px;
+    transform: rotate(90deg);
+	max-width: 150px;
+	max-height: 150px;
 	display: inline;
 	float: left;
 	padding: 15px;

@@ -1,35 +1,26 @@
+
+   <div class="btn btn-large btn-primary">
+      <%= link_to 'New Product', new_product_path %>
+    </div>
 <h1>Welcome to cO(n)go</h1>
   
  
     <% @products.each do |product| %>
-      <div class="col-md-4 col-md-offset-4">
-        <div class="all-products text-center">
-          <div>
-            <p><%= product.name %></p>
-            <p><%= product.description %></p>
-          </div>
-          <div class="just-photos">  
-            <figure class="product-thumbnail">
-              <p class="product-thumbnail">
+      <div class="col-md-4 thumbnail">
+  
+            <p>Product:<%= product.name %></p>
+            <p>Description:<%= product.description %></p>
                 <%= link_to 'path' do %>
-                  <%= image_tag product.pic %>
+                  <%= image_tag product.pic, class: 'product-thumbnail' %>
                 <% end %>
                 <%= product.formatted_price %>
-              </p>
-            </figure>
-          </div> 
+
             
             
-          <div>
-            <%= link_to 'Show', product %>
-            <%= link_to 'Edit', edit_product_path(product) %>
-            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        </div>
-        
-        <% end %>
-
-    <br>
-
-      <%= link_to 'New Product', new_product_path %>
+          <%= link_to 'Show', product %>
+          <%= link_to 'Edit', edit_product_path(product) %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  
       </div>
+        
+    <% end %>
