@@ -10,9 +10,7 @@
 
 <% @products.each do |product| %>
 <dl class="col-md-4 col-span-3">
-  <%= link_to 'path' do %>
-    <%= image_tag product.pic, class: 'product-image' %>
-  <% end %>
+    <a href="http://localhost:3000/products/<%= product.id %>"><%= image_tag product.pic, class: 'product-image' %></a>
   <dt>
     <%= product.name %>
   </dt>
@@ -20,13 +18,12 @@
     <p><%= product.description %></p>
   </dd>
 
-  <dt>
-    <%= product.formatted_price %>
+  <dt class="price">
+    <a href="http://localhost:3000/products/<%= product.id %>">$<%= product.formatted_price %></a>
   </dt>
   
 
   <dd>
-    <%= link_to 'Show', product %>
     <%= link_to 'Edit', edit_product_path(product) %>
     <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
   </dd>
