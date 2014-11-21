@@ -28,5 +28,12 @@ dl{
 	font-size: 12px;
 }
 
+.yoda-alt{
+	background.image: url(assets/yoda.png);
+}
+
+#product-name{
+	font-weight: bold;
+}
 
 
