@@ -14,7 +14,7 @@
 
     </dd><br/>
 
-    <dt class="show-price">
+    <dt class="price">
       Date this person! Just $<%= @product.formatted_price %>!
     </dt>
 
@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<div>
+<div class="text-center">
   <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+  <%= link_to 'Home', products_path %>
 </div>

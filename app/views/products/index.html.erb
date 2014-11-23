@@ -14,14 +14,16 @@
     <p><%= product.description %></p>
   </dd>
 
-  <dt class="price">
-    <a href="http://localhost:3000/products/<%= product.id %>">ONLY $<%= product.formatted_price %></a>
-  </dt>
+  <div class"text-bottom">
+    <dt class="price">
+      <a href="http://localhost:3000/products/<%= product.id %>">ONLY $<%= product.formatted_price %></a>
+    </dt>
+  </div>
   
 
-  <dd>
+  <dd class="edit-delete">
     <%= link_to 'Edit', edit_product_path(product) %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %>
   </dd>
 </dl>
 

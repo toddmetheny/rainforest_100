@@ -7,7 +7,10 @@ Here are some bonus goals, if you’re up for it:
 
 	Use distance_of_time_in_words in Review timestamp.
 
-	Then refactor to use time_ago_in_words, which defaults to difference from Time.now().
+	Then refactor to use time_ago_in_words, which defaults to difference from Time.now()
 
-  Jessica Hunt
-  Rodo Novarini
+	Need to run these commands for deployment with stripe:
+		heroku create
+		heroku config:set PUBLISHABLE_KEY=pk_test_6pRNASCoBOKtIshFeQd4XMUh SECRET_KEY=sk_test_BQokikJOvBiI2HlWgH4olfQ2
+		git push heroku master
+		heroku open
